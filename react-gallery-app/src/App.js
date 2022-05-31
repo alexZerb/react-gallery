@@ -1,11 +1,26 @@
 import './App.css';
 import SearchButton from './components/SearchButton';
+import PhotoContainer from './components/PhotoContainer';
+import { Component } from 'react';
 
-const App = () => {
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      apiKey: config,
+      query: '',
+      photos: [],
+      loading: true
+    };
+  }
+
+  handleSearch = (query) => {
+    
+  }
   
   
-  
-  return (
+  render() { 
+    return (
 
     <div className="container">
       
@@ -18,14 +33,17 @@ const App = () => {
     
       <nav className='main-nav'>
         <ul>
-          <li><a href='#'>Cats</a></li>
-          <li><a href='#'>Dogs</a></li>
-          <li><a href='#'>Computers</a></li>
+          <li>Cats</li>
+          <li>Dogs</li>
+          <li>Computers</li>
         </ul>
       </nav>
     
+      <PhotoContainer />
+
+
     </div>
-  );
+  )};
 }
 
 export default App;
